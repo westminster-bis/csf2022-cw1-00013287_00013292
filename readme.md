@@ -22,8 +22,7 @@ py main.py
 
 ## Contributing
 
-Contributions are not implied for this project, in general, although not refused as well. If you happen to have any ideas or changes you would want to implement in the code - you are very welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Contributions are not implied for this project, in general, although not refused as well. If you happen to have any ideas or changes you would want to implement in the code - you are very welcome to fork the repository and pull request your changes afterwards. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
