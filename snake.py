@@ -25,3 +25,37 @@ difficulty = 0
 #     Easy = 50
 #     Medium = 100
 #     Hard = 500
+
+# set pygame display size
+win = pygame.display.set_mode((display_width,display_height))
+# set pygame window caption
+pygame.display.set_caption('Snake Game by 00013287 & 00013292')
+# set pygame clock for controlling in-game speed
+clock = pygame.time.Clock()
+# define player name
+player_name = '';
+# set default player name to True
+default_player_name = True;
+
+# define a function for generating snake food at random locations
+def setup_snake_food():
+    new_food_position = [random.randrange(1, (display_width//10))* 10, random.randrange(1, (display_height//10)) * 10]
+    return new_food_position
+
+# define a function for generating obstacles
+def setup_collision_obj():
+    new_collision_obj = [random.randrange(1, (display_width//10))* 10, random.randrange(1, (display_height//10)) * 10]
+    return new_collision_obj
+
+# define a function for setting up game difficulty
+def set_game_difficulty(selected: Tuple, value: Any):
+    if(value == 1):
+        difficulty = 25
+    elif(value == 2):
+        difficulty = 50
+    elif(value == 3):
+        difficulty = 100
+    elif(value == 4):
+        difficulty = 500
+    else:
+        difficulty = 25
