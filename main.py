@@ -19,7 +19,10 @@ white = (255,255,255)
 red = (255,0,0)
 
 # define initial difficulty level
+
 difficulty = 10
+difficulty = 0
+# define 
  
 # Game difficulty is assigned the following values:
 #     Beginner = 25
@@ -51,6 +54,7 @@ def setup_collision_obj():
 # define a function for set up game difficulty
 def set_game_difficulty(selected: Tuple, value: Any):
     # when called this function checks the state of the selected difficulty level and updated difficulty level accordingly
+
     global difficulty
     if(value == 1):
         difficulty = 4
@@ -64,6 +68,18 @@ def set_game_difficulty(selected: Tuple, value: Any):
     elif(value == 4):
         difficulty = 24
         print(difficulty)
+
+    if(value == 1):
+        difficulty = 25
+    elif(value == 2):
+        difficulty = 50
+    elif(value == 3):
+        difficulty = 100
+    elif(value == 4):
+        difficulty = 500
+    else:
+        difficulty = 25
+
 
 # define a function for display in-game score
 def show_game_score(font, size, game_score):
@@ -271,7 +287,10 @@ def game_loop():
         # dynamically update pygame display after any change
         pygame.display.update();
         # set game difficulty
+
         print("dif is : ", difficulty)
+        
+
         clock.tick(difficulty);
 # displaydisplay start screen at the start of the game
 show_start_screen()
