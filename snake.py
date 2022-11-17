@@ -59,3 +59,32 @@ def set_game_difficulty(selected: Tuple, value: Any):
         difficulty = 500
     else:
         difficulty = 25
+
+# define a function for displaying in-game score
+def show_game_score(font, size, game_score):
+    game_score_font = pygame.font.SysFont(font, size);
+    game_score_surface = game_score_font.render((player_name + "'s Game Score: " + str(game_score)), True, white)
+    game_score_rect = game_score_surface.get_rect()
+    game_score_rect.midtop = (display_height, 15)
+    win.blit(game_score_surface, game_score_rect)
+
+# define a function for displaying generated collision object
+def show_collision_obj(collision_obj_position, snake_width, snake_height):
+    collision_obj_rect = pygame.Rect(collision_obj_position[0], collision_obj_position[1], snake_width, snake_height)
+    collision_obj_image = pygame.image.load("./red-brick-wall.jpg")
+    collision_obj_image_resize = pygame.transform.scale(collision_obj_image, (snake_width, snake_height))
+    win.blit(collision_obj_image_resize, collision_obj_rect)
+
+# define a function for assinging a name to a player
+def set_player_name(name):
+    global player_name;
+    global default_player_name;
+    player_name = name;
+    default_player_name = False;
+
+# define a function for setting default name to user
+def set_default_player_name():
+    global player_name;
+    global default_player_name;
+    player_name = "Guest";
+    default_player_name = False;
